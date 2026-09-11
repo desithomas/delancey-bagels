@@ -1,126 +1,160 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-/* OMGGGGGGGGGGGGGGGGGG, spare me the frustration and pain, jeez louise 
-
-this shouldn't be anywhere near this difficult
-
-what is going on with my brain right now
-
-*/
-
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: rgb(255	253	247);
-    color: rgb(65	48	37);
+    background-color: rgba(255, 253, 247, 1);
+    color: rgba(65, 48, 37, 1);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
 }
 
-h1, h2, h3{
-    font-family: Roboto; 
-    color: rgb(65	48	37);
+h1, h2, h3 {
+    color: rgba(65, 48, 37, 1);
     font-weight: bold;
 }
 
-.price{
-    color: rgb(30	68	122);
-    font-weight: bold;
-}
-
-.header{
+.site-header {
+    padding: 0 20px 24px;
     text-align: center;
-    padding: 0;
-    margin-bottom: 15px;
 }
 
-.header h1{
-    font-size: 42px;
-    margin-bottom: 15px;
+.site-header h1 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.1;
+    padding: 8px 0 24px;
 }
 
-.header ul{
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px 46px;
+    justify-content: center;
     list-style: none;
 }
 
-.header li{
-    display: inline-block;
-    margin: 0 15px;
-}
-
-.header a{
-    text-decoration: none;
-    color: rgb(65	48	37);
+nav a {
+    color: rgba(65, 48, 37, 1);
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
     font-style: italic;
-    font-size: 16px;
-   
+    text-decoration: none;
 }
 
-
-.hero{
-    height: 400px;
-    background: url("https://images.unsplash.com/photo-1687175452217-e4f8e523b5b5?q=80&w=2370&auto=format&fit=crop");
-    background-position: center;
-
+nav a:hover,
+nav a:focus {
+    text-decoration: underline;
 }
 
-.main-content{
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 50px 20px;
+.hero {
+    background: url("https://images.unsplash.com/photo-1687175452217-e4f8e523b5b5?q=80&w=2370&auto=format&fit=crop") center / cover;
+    height: min(61vw, 800px);
+    min-height: 360px;
+}
+
+.intro {
+    padding: 102px 20px 112px;
     text-align: center;
 }
 
-.main-content h2{
-    font-size: 32px;
-    margin-bottom: 40px;
+.intro h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
 }
 
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
+.bagel-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 0 auto 80px;
+    max-width: 1200px;
+    padding: 0 20px;
 }
 
-.three-little-pigs{
-    margin-bottom: 60px;
+.menu-item {
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(65, 48, 37, 1);
+    flex: 1 1 280px;
 }
 
-.yummy-container{
-    float: left;
-    width: 31.33%;
-    margin: 0 1%;
-    background-color: white;
-    border: 1px solid black;
-    text-align: left;
-}
-
-.yummy-container img{
-    width: 100%;
-    height: 200px; 
-    object-fit: cover;
+.menu-item img {
     display: block;
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
 }
 
-.piggy-content{
-    padding: 20px;
+.menu-item-content {
+    padding: 22px;
 }
 
-.piggy-content h3{
-    font-size: 20px;
-    margin-bottom: 10px;
+.menu-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
 }
 
-.coffee-selection{
-    line-height: 2;
-    margin-bottom: 30px;
-    
+.menu-item p {
+    margin-bottom: 18px;
 }
 
-.footer{
-    border-top: 1px solid rgb(30	68	122);
+.price {
+    color: rgba(30, 68, 122, 1);
+    font-weight: bold;
+}
+
+.coffee-selection {
+    margin: 0 auto 80px;
+    max-width: 760px;
+    padding: 0 20px;
     text-align: center;
-    font-size: 14px;
-    padding-top: 60px;
-    height: 50px;
+}
+
+.coffee-selection h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    margin-bottom: 12px;
+}
+
+.site-footer {
+    border-top: 1px solid rgba(30, 68, 122, 1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 30px;
+    justify-content: center;
+    padding: 28px 20px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        padding-bottom: 20px;
+    }
+
+    .site-header h1 {
+        padding-bottom: 18px;
+    }
+
+    nav ul {
+        gap: 10px 24px;
+    }
+
+    .hero {
+        height: 58vw;
+        min-height: 260px;
+    }
+
+    .intro {
+        padding: 62px 20px 70px;
+    }
+
+    .bagel-menu {
+        margin-bottom: 60px;
+    }
+
+    .menu-item img {
+        height: 190px;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        gap: 4px;
+    }
 }
